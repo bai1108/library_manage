@@ -19,11 +19,12 @@ namespace Library_manage.Views
         private void InitializeData()
         {
             if (ScreenData.IsDesignMode(this)) return;
+            deviceCombo.Items.Clear();deviceCombo.Items.Add("Irising0338 双目采集仪");deviceCombo.SelectedIndex=0;
             serverTextBox.ReadOnly=true;databaseTextBox.ReadOnly=true;
             dbUserTextBox.Text="Windows 身份验证";dbUserTextBox.ReadOnly=true;dbPasswordTextBox.Enabled=false;
             VisibleChanged+=delegate {if(!ScreenData.IsDesignMode(this) && Visible && Database.AdminID>0)ScreenData.Run(RefreshSettings);};
             testDatabaseButton.Click+=delegate {ScreenData.Run(delegate {using(SqlConnection c=Database.Open()){} MessageBox.Show("已成功连接 BAI / DoorAccess2026。","数据库连接");});};
-            testDeviceButton.Click+=delegate {MessageBox.Show("尚未接入设备 SDK，不能测试虹膜采集。","虹膜设备");};
+            testDeviceButton.Click+=delegate {using(IrisTestForm f=new IrisTestForm())f.ShowDialog();};
             saveSettingsButton.Click+=delegate {ScreenData.Run(delegate {Database.SaveRules((int)maxBooksNumeric.Value,(int)loanDaysNumeric.Value,(int)renewCountNumeric.Value,(int)renewDaysNumeric.Value);MessageBox.Show("借阅规则已保存，重新启动后仍然有效。","设置");});};
             addAccountButton.Click+=delegate {EditAccount(true);};editAccountButton.Click+=delegate {EditAccount(false);};
             stopAccountButton.Click+=delegate {ScreenData.Run(delegate {Database.RequireAdmin(true);DataRow r=ScreenData.Need(accountsGrid);int id=Convert.ToInt32(r["AdminID"]);if(id==Database.AdminID)throw new Exception("不能停用当前登录账户。");string state=r["Status"].ToString()=="正常"?"停用":"正常";Database.Write("账户状态","Admin",id,"UPDATE dbo.Admin SET Status=@s WHERE AdminID=@id",Database.P("@s",state),Database.P("@id",id));RefreshSettings();});};
@@ -37,11 +38,16 @@ namespace Library_manage.Views
             maxBooksNumeric.Maximum=3650;loanDaysNumeric.Maximum=3650;renewCountNumeric.Minimum=0;renewCountNumeric.Maximum=3650;renewDaysNumeric.Maximum=3650;
             maxBooksNumeric.Value=Database.MaxBooks;loanDaysNumeric.Value=Database.LoanDays;renewCountNumeric.Value=Database.RenewLimit;renewDaysNumeric.Value=Database.RenewDays;
             bool system=Database.AdminRole=="系统管理员";saveSettingsButton.Enabled=system;addAccountButton.Enabled=system;editAccountButton.Enabled=system;stopAccountButton.Enabled=system;
-            if(system)ScreenData.Bind(accountsGrid,Database.Query("SELECT AdminID,LoginName,DisplayName,Role,Status FROM dbo.Admin ORDER BY AdminID"),"LoginName","Role","Status");
+            if(system)ScreenData.Bind(accountsGrid,Database.Query("SELECT AdminID,LoginName,DisplayName,Role,Status FROM dbo.Admin ORDER BY AdminID"),"LoginName","Role","Status");else accountsGrid.DataSource=null;
         }
         private void EditAccount(bool create)
         {
             ScreenData.Run(delegate {Database.RequireAdmin(true);DataRow r=create?null:ScreenData.Need(accountsGrid);using(AccountEditor f=new AccountEditor(r)){if(f.ShowDialog()==DialogResult.OK)RefreshSettings();}});
+        }
+
+        private void SettingsView_Load(object sender, EventArgs e)
+        {
+
         }
     }
     public class AccountEditor : Form

@@ -13,178 +13,224 @@
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
-            this.SuspendLayout();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminLoginForm));
             this.titlePanel = new System.Windows.Forms.Panel();
-            this.titlePanel.Location = new System.Drawing.Point(0, 0);
-            this.titlePanel.Size = new System.Drawing.Size(560, 60);
-            this.titlePanel.Name = "titlePanel";
-            this.titlePanel.TabIndex = 0;
-            this.titlePanel.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.Controls.Add(this.titlePanel);
             this.libraryLogo = new System.Windows.Forms.PictureBox();
-            this.libraryLogo.Location = new System.Drawing.Point(24, 15);
-            this.libraryLogo.Size = new System.Drawing.Size(30, 30);
-            this.libraryLogo.Name = "libraryLogo";
-            this.libraryLogo.TabIndex = 0;
-            this.libraryLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.libraryLogo.Image = ((System.Drawing.Image)(resources.GetObject("libraryLogo.Image")));
-            this.libraryLogo.TabStop = false;
-            this.titlePanel.Controls.Add(this.libraryLogo);
             this.applicationTitle = new System.Windows.Forms.Label();
-            this.applicationTitle.Location = new System.Drawing.Point(68, 17);
-            this.applicationTitle.Size = new System.Drawing.Size(360, 30);
-            this.applicationTitle.Name = "applicationTitle";
-            this.applicationTitle.TabIndex = 1;
-            this.applicationTitle.Text = "图书借阅管理系统";
-            this.applicationTitle.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.applicationTitle.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
-            this.titlePanel.Controls.Add(this.applicationTitle);
-
             this.minimizeButton = new System.Windows.Forms.Button();
-            this.minimizeButton.Location = new System.Drawing.Point(450, 10);
-            this.minimizeButton.Size = new System.Drawing.Size(44, 40);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.TabIndex = 3;
-            this.minimizeButton.Text = "—";
-            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.minimizeButton.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.minimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimizeButton.UseVisualStyleBackColor = false;
-            this.minimizeButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.titlePanel.Controls.Add(this.minimizeButton);
-            this.minimizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(220, 225, 218);
-            this.minimizeButton.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.minimizeButton.FlatAppearance.BorderSize = 1;
-            this.minimizeButton.FlatAppearance.BorderSize = 0;
-            this.minimizeButton.Font = new System.Drawing.Font("微软雅黑", 16F);
             this.closeWindowButton = new System.Windows.Forms.Button();
-            this.closeWindowButton.Location = new System.Drawing.Point(498, 10);
-            this.closeWindowButton.Size = new System.Drawing.Size(44, 40);
-            this.closeWindowButton.Name = "closeWindowButton";
-            this.closeWindowButton.TabIndex = 4;
-            this.closeWindowButton.Text = "×";
-            this.closeWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeWindowButton.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.closeWindowButton.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.closeWindowButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeWindowButton.UseVisualStyleBackColor = false;
-            this.closeWindowButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.titlePanel.Controls.Add(this.closeWindowButton);
-            this.closeWindowButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(220, 225, 218);
-            this.closeWindowButton.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.closeWindowButton.FlatAppearance.BorderSize = 1;
-            this.closeWindowButton.FlatAppearance.BorderSize = 0;
-            this.closeWindowButton.Font = new System.Drawing.Font("微软雅黑", 16F);
             this.titleDivider = new System.Windows.Forms.Panel();
-            this.titleDivider.Location = new System.Drawing.Point(0, 59);
-            this.titleDivider.Size = new System.Drawing.Size(560, 1);
-            this.titleDivider.Name = "titleDivider";
-            this.titleDivider.TabIndex = 5;
-            this.titleDivider.BackColor = System.Drawing.Color.FromArgb(225, 228, 222);
+            this.adminTitle = new System.Windows.Forms.Label();
+            this.accountCaption = new System.Windows.Forms.Label();
+            this.accountTextBox = new System.Windows.Forms.TextBox();
+            this.passwordCaption = new System.Windows.Forms.Label();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.adminLoginButton = new System.Windows.Forms.Button();
+            this.backReaderButton = new System.Windows.Forms.Button();
+            this.titlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryLogo)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // titlePanel
+            // 
+            this.titlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.titlePanel.Controls.Add(this.libraryLogo);
+            this.titlePanel.Controls.Add(this.applicationTitle);
+            this.titlePanel.Controls.Add(this.minimizeButton);
+            this.titlePanel.Controls.Add(this.closeWindowButton);
             this.titlePanel.Controls.Add(this.titleDivider);
+            this.titlePanel.Location = new System.Drawing.Point(0, 0);
+            this.titlePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.titlePanel.Name = "titlePanel";
+            this.titlePanel.Size = new System.Drawing.Size(700, 75);
+            this.titlePanel.TabIndex = 0;
             this.titlePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitlePanel_MouseDown);
             this.titlePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitlePanel_MouseMove);
             this.titlePanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TitlePanel_MouseUp);
+            // 
+            // libraryLogo
+            // 
+            this.libraryLogo.Image = ((System.Drawing.Image)(resources.GetObject("libraryLogo.Image")));
+            this.libraryLogo.Location = new System.Drawing.Point(30, 19);
+            this.libraryLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.libraryLogo.Name = "libraryLogo";
+            this.libraryLogo.Size = new System.Drawing.Size(38, 38);
+            this.libraryLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.libraryLogo.TabIndex = 0;
+            this.libraryLogo.TabStop = false;
+            // 
+            // applicationTitle
+            // 
+            this.applicationTitle.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Bold);
+            this.applicationTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.applicationTitle.Location = new System.Drawing.Point(85, 21);
+            this.applicationTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.applicationTitle.Name = "applicationTitle";
+            this.applicationTitle.Size = new System.Drawing.Size(450, 38);
+            this.applicationTitle.TabIndex = 1;
+            this.applicationTitle.Text = "图书借阅管理系统";
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.minimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.minimizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(218)))));
+            this.minimizeButton.FlatAppearance.BorderSize = 0;
+            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeButton.Font = new System.Drawing.Font("Microsoft YaHei", 16F);
+            this.minimizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.minimizeButton.Location = new System.Drawing.Point(562, 12);
+            this.minimizeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(55, 50);
+            this.minimizeButton.TabIndex = 3;
+            this.minimizeButton.Text = "—";
+            this.minimizeButton.UseVisualStyleBackColor = false;
             this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            // 
+            // closeWindowButton
+            // 
+            this.closeWindowButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.closeWindowButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeWindowButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(218)))));
+            this.closeWindowButton.FlatAppearance.BorderSize = 0;
+            this.closeWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeWindowButton.Font = new System.Drawing.Font("Microsoft YaHei", 16F);
+            this.closeWindowButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.closeWindowButton.Location = new System.Drawing.Point(622, 12);
+            this.closeWindowButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.closeWindowButton.Name = "closeWindowButton";
+            this.closeWindowButton.Size = new System.Drawing.Size(55, 50);
+            this.closeWindowButton.TabIndex = 4;
+            this.closeWindowButton.Text = "×";
+            this.closeWindowButton.UseVisualStyleBackColor = false;
             this.closeWindowButton.Click += new System.EventHandler(this.CloseWindowButton_Click);
-
-            this.adminTitle = new System.Windows.Forms.Label();
-            this.adminTitle.Location = new System.Drawing.Point(40, 99);
-            this.adminTitle.Size = new System.Drawing.Size(480, 44);
+            // 
+            // titleDivider
+            // 
+            this.titleDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(228)))), ((int)(((byte)(222)))));
+            this.titleDivider.Location = new System.Drawing.Point(0, 74);
+            this.titleDivider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.titleDivider.Name = "titleDivider";
+            this.titleDivider.Size = new System.Drawing.Size(700, 1);
+            this.titleDivider.TabIndex = 5;
+            // 
+            // adminTitle
+            // 
+            this.adminTitle.Font = new System.Drawing.Font("Microsoft YaHei", 22F, System.Drawing.FontStyle.Bold);
+            this.adminTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.adminTitle.Location = new System.Drawing.Point(247, 125);
+            this.adminTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.adminTitle.Name = "adminTitle";
+            this.adminTitle.Size = new System.Drawing.Size(222, 55);
             this.adminTitle.TabIndex = 3;
             this.adminTitle.Text = "管理员登录";
-            this.adminTitle.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.adminTitle.Font = new System.Drawing.Font("微软雅黑", 22F, System.Drawing.FontStyle.Bold);
-            this.Controls.Add(this.adminTitle);
-            this.accountCaption = new System.Windows.Forms.Label();
-            this.accountCaption.Location = new System.Drawing.Point(40, 175);
-            this.accountCaption.Size = new System.Drawing.Size(480, 25);
+            // 
+            // accountCaption
+            // 
+            this.accountCaption.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.accountCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(128)))), ((int)(((byte)(122)))));
+            this.accountCaption.Location = new System.Drawing.Point(50, 219);
+            this.accountCaption.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.accountCaption.Name = "accountCaption";
+            this.accountCaption.Size = new System.Drawing.Size(600, 31);
             this.accountCaption.TabIndex = 4;
             this.accountCaption.Text = "账号";
-            this.accountCaption.ForeColor = System.Drawing.Color.FromArgb(120, 128, 122);
-            this.accountCaption.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular);
-            this.Controls.Add(this.accountCaption);
-            this.accountTextBox = new System.Windows.Forms.TextBox();
-            this.accountTextBox.Location = new System.Drawing.Point(40, 211);
-            this.accountTextBox.Size = new System.Drawing.Size(480, 34);
-            this.accountTextBox.Name = "accountTextBox";
-            this.accountTextBox.TabIndex = 5;
-            this.accountTextBox.Text = "";
+            // 
+            // accountTextBox
+            // 
             this.accountTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.accountTextBox.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.Controls.Add(this.accountTextBox);
-            this.accountTextBox.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.passwordCaption = new System.Windows.Forms.Label();
-            this.passwordCaption.Location = new System.Drawing.Point(40, 274);
-            this.passwordCaption.Size = new System.Drawing.Size(480, 25);
+            this.accountTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 10.5F);
+            this.accountTextBox.Location = new System.Drawing.Point(50, 264);
+            this.accountTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.accountTextBox.Name = "accountTextBox";
+            this.accountTextBox.Size = new System.Drawing.Size(600, 31);
+            this.accountTextBox.TabIndex = 5;
+            // 
+            // passwordCaption
+            // 
+            this.passwordCaption.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.passwordCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(128)))), ((int)(((byte)(122)))));
+            this.passwordCaption.Location = new System.Drawing.Point(50, 342);
+            this.passwordCaption.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passwordCaption.Name = "passwordCaption";
+            this.passwordCaption.Size = new System.Drawing.Size(600, 31);
             this.passwordCaption.TabIndex = 6;
             this.passwordCaption.Text = "密码";
-            this.passwordCaption.ForeColor = System.Drawing.Color.FromArgb(120, 128, 122);
-            this.passwordCaption.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular);
-            this.Controls.Add(this.passwordCaption);
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.passwordTextBox.Location = new System.Drawing.Point(40, 310);
-            this.passwordTextBox.Size = new System.Drawing.Size(480, 34);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.TabIndex = 7;
-            this.passwordTextBox.Text = "";
+            // 
+            // passwordTextBox
+            // 
             this.passwordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.passwordTextBox.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 10.5F);
+            this.passwordTextBox.Location = new System.Drawing.Point(50, 388);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(600, 31);
+            this.passwordTextBox.TabIndex = 7;
             this.passwordTextBox.UseSystemPasswordChar = true;
-            this.Controls.Add(this.passwordTextBox);
-            this.passwordTextBox.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.adminLoginButton = new System.Windows.Forms.Button();
-            this.adminLoginButton.Location = new System.Drawing.Point(40, 378);
-            this.adminLoginButton.Size = new System.Drawing.Size(480, 44);
+            // 
+            // adminLoginButton
+            // 
+            this.adminLoginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(100)))), ((int)(((byte)(82)))));
+            this.adminLoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adminLoginButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(100)))), ((int)(((byte)(82)))));
+            this.adminLoginButton.FlatAppearance.BorderSize = 0;
+            this.adminLoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminLoginButton.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.adminLoginButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.adminLoginButton.Location = new System.Drawing.Point(50, 472);
+            this.adminLoginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.adminLoginButton.Name = "adminLoginButton";
+            this.adminLoginButton.Size = new System.Drawing.Size(600, 55);
             this.adminLoginButton.TabIndex = 8;
             this.adminLoginButton.Text = "登录（演示）";
-            this.adminLoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminLoginButton.BackColor = System.Drawing.Color.FromArgb(53, 100, 82);
-            this.adminLoginButton.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.adminLoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adminLoginButton.UseVisualStyleBackColor = false;
-            this.adminLoginButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Controls.Add(this.adminLoginButton);
-            this.adminLoginButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(53, 100, 82);
-            this.adminLoginButton.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.adminLoginButton.FlatAppearance.BorderSize = 0;
-            this.backReaderButton = new System.Windows.Forms.Button();
-            this.backReaderButton.Location = new System.Drawing.Point(40, 444);
-            this.backReaderButton.Size = new System.Drawing.Size(480, 36);
+            this.adminLoginButton.Click += new System.EventHandler(this.adminLoginButton_Click);
+            // 
+            // backReaderButton
+            // 
+            this.backReaderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.backReaderButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backReaderButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(218)))));
+            this.backReaderButton.FlatAppearance.BorderSize = 0;
+            this.backReaderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backReaderButton.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.backReaderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.backReaderButton.Location = new System.Drawing.Point(50, 555);
+            this.backReaderButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backReaderButton.Name = "backReaderButton";
+            this.backReaderButton.Size = new System.Drawing.Size(600, 45);
             this.backReaderButton.TabIndex = 9;
             this.backReaderButton.Text = "返回读者登录";
-            this.backReaderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backReaderButton.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.backReaderButton.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.backReaderButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backReaderButton.UseVisualStyleBackColor = false;
-            this.backReaderButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Controls.Add(this.backReaderButton);
-            this.backReaderButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(220, 225, 218);
-            this.backReaderButton.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.backReaderButton.FlatAppearance.BorderSize = 1;
-            this.backReaderButton.FlatAppearance.BorderSize = 0;
             this.backReaderButton.Click += new System.EventHandler(this.CloseWindowButton_Click);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            // 
+            // AdminLoginForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(245, 245, 241);
-            this.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Name = "AdminLoginForm";
-            this.ClientSize = new System.Drawing.Size(560, 510);
-            this.Text = "管理员登录";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
+            this.ClientSize = new System.Drawing.Size(700, 638);
+            this.Controls.Add(this.titlePanel);
+            this.Controls.Add(this.adminTitle);
+            this.Controls.Add(this.accountCaption);
+            this.Controls.Add(this.accountTextBox);
+            this.Controls.Add(this.passwordCaption);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.adminLoginButton);
+            this.Controls.Add(this.backReaderButton);
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.adminLoginButton.Click += new System.EventHandler(this.adminLoginButton_Click);
+            this.Name = "AdminLoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "管理员登录";
+            this.titlePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.libraryLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
 

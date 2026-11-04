@@ -13,260 +13,363 @@
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IrisRegistrationView));
             this.pageTitle = new System.Windows.Forms.Label();
-            this.pageTitle.Location = new System.Drawing.Point(0, 0);
-            this.pageTitle.Size = new System.Drawing.Size(700, 34);
+            this.findReaderCaption = new System.Windows.Forms.Label();
+            this.findReaderTextBox = new System.Windows.Forms.TextBox();
+            this.findReaderButton = new System.Windows.Forms.Button();
+            this.registerReadersGrid = new System.Windows.Forms.DataGridView();
+            this.registerReadersGridId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.registerReadersGridName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.registerReadersGridState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.registerReaderCount = new System.Windows.Forms.Label();
+            this.registrationPanel = new System.Windows.Forms.Panel();
+            this.selectedReader = new System.Windows.Forms.Label();
+            this.selectedReaderId = new System.Windows.Forms.Label();
+            this.cameraPanel = new System.Windows.Forms.Panel();
+            this.irisCameraGuide = new System.Windows.Forms.PictureBox();
+            this.registerDeviceState = new System.Windows.Forms.Label();
+            this.eyeLabel = new System.Windows.Forms.Label();
+            this.eyeCombo = new System.Windows.Forms.ComboBox();
+            this.registrationState = new System.Windows.Forms.Label();
+            this.qualityLabel = new System.Windows.Forms.Label();
+            this.connectDeviceButton = new System.Windows.Forms.Button();
+            this.startRegistrationButton = new System.Windows.Forms.Button();
+            this.recaptureButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.registerReadersGrid)).BeginInit();
+            this.registrationPanel.SuspendLayout();
+            this.cameraPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.irisCameraGuide)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pageTitle
+            // 
+            this.pageTitle.Font = new System.Drawing.Font("Microsoft YaHei", 19F, System.Drawing.FontStyle.Bold);
+            this.pageTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.pageTitle.Location = new System.Drawing.Point(24, 13);
+            this.pageTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pageTitle.Name = "pageTitle";
+            this.pageTitle.Size = new System.Drawing.Size(875, 42);
             this.pageTitle.TabIndex = 0;
             this.pageTitle.Text = "虹膜注册";
-            this.pageTitle.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.pageTitle.Font = new System.Drawing.Font("微软雅黑", 19F, System.Drawing.FontStyle.Bold);
-            this.Controls.Add(this.pageTitle);
-
-            this.findReaderCaption = new System.Windows.Forms.Label();
-            this.findReaderCaption.Location = new System.Drawing.Point(0, 58);
-            this.findReaderCaption.Size = new System.Drawing.Size(360, 25);
+            // 
+            // findReaderCaption
+            // 
+            this.findReaderCaption.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.findReaderCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(128)))), ((int)(((byte)(122)))));
+            this.findReaderCaption.Location = new System.Drawing.Point(27, 72);
+            this.findReaderCaption.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.findReaderCaption.Name = "findReaderCaption";
+            this.findReaderCaption.Size = new System.Drawing.Size(450, 31);
             this.findReaderCaption.TabIndex = 2;
             this.findReaderCaption.Text = "读者编号 / 姓名";
-            this.findReaderCaption.ForeColor = System.Drawing.Color.FromArgb(120, 128, 122);
-            this.findReaderCaption.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular);
-            this.Controls.Add(this.findReaderCaption);
-            this.findReaderTextBox = new System.Windows.Forms.TextBox();
-            this.findReaderTextBox.Location = new System.Drawing.Point(0, 90);
-            this.findReaderTextBox.Size = new System.Drawing.Size(289, 33);
-            this.findReaderTextBox.Name = "findReaderTextBox";
-            this.findReaderTextBox.TabIndex = 3;
-            this.findReaderTextBox.Text = "";
+            // 
+            // findReaderTextBox
+            // 
             this.findReaderTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.findReaderTextBox.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.Controls.Add(this.findReaderTextBox);
-            this.findReaderTextBox.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.findReaderButton = new System.Windows.Forms.Button();
-            this.findReaderButton.Location = new System.Drawing.Point(305, 87);
-            this.findReaderButton.Size = new System.Drawing.Size(103, 40);
+            this.findReaderTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 10.5F);
+            this.findReaderTextBox.Location = new System.Drawing.Point(34, 119);
+            this.findReaderTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.findReaderTextBox.Name = "findReaderTextBox";
+            this.findReaderTextBox.Size = new System.Drawing.Size(361, 31);
+            this.findReaderTextBox.TabIndex = 3;
+            // 
+            // findReaderButton
+            // 
+            this.findReaderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(100)))), ((int)(((byte)(82)))));
+            this.findReaderButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.findReaderButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(100)))), ((int)(((byte)(82)))));
+            this.findReaderButton.FlatAppearance.BorderSize = 0;
+            this.findReaderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.findReaderButton.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.findReaderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.findReaderButton.Location = new System.Drawing.Point(403, 107);
+            this.findReaderButton.Margin = new System.Windows.Forms.Padding(4);
             this.findReaderButton.Name = "findReaderButton";
+            this.findReaderButton.Size = new System.Drawing.Size(129, 50);
             this.findReaderButton.TabIndex = 4;
             this.findReaderButton.Text = "查找";
-            this.findReaderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.findReaderButton.BackColor = System.Drawing.Color.FromArgb(53, 100, 82);
-            this.findReaderButton.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.findReaderButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.findReaderButton.UseVisualStyleBackColor = false;
-            this.findReaderButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Controls.Add(this.findReaderButton);
-            this.findReaderButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(53, 100, 82);
-            this.findReaderButton.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.findReaderButton.FlatAppearance.BorderSize = 0;
-            this.registerReadersGrid = new System.Windows.Forms.DataGridView();
-            this.registerReadersGrid.Location = new System.Drawing.Point(0, 160);
-            this.registerReadersGrid.Size = new System.Drawing.Size(408, 402);
-            this.registerReadersGrid.Name = "registerReadersGrid";
-            this.registerReadersGrid.TabIndex = 5;
-            this.registerReadersGrid.BackgroundColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.registerReadersGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            // 
+            // registerReadersGrid
+            // 
             this.registerReadersGrid.AllowUserToAddRows = false;
             this.registerReadersGrid.AllowUserToDeleteRows = false;
-            this.registerReadersGrid.ReadOnly = true;
-            this.registerReadersGrid.RowHeadersVisible = false;
-            this.registerReadersGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.registerReadersGrid.MultiSelect = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(254)))));
+            this.registerReadersGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.registerReadersGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.registerReadersGrid.EnableHeadersVisualStyles = false;
-            this.registerReadersGrid.ColumnHeadersHeight = 40;
-            this.registerReadersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.registerReadersGrid.GridColor = System.Drawing.Color.FromArgb(232, 237, 243);
-            this.Controls.Add(this.registerReadersGrid);
-            this.registerReadersGrid.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(237, 243, 249);
-            this.registerReadersGrid.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.registerReadersGrid.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(225, 237, 252);
-            this.registerReadersGrid.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.registerReadersGrid.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(249, 251, 254);
-            this.registerReadersGrid.RowTemplate.Height = 34;
-            this.registerReadersGridId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registerReadersGridId.Name = "registerReadersGridId";
-            this.registerReadersGridId.HeaderText = "读者编号";
-            this.registerReadersGridId.FillWeight = 90F;
-            this.registerReadersGridId.ReadOnly = true;
-            this.registerReadersGrid.Columns.Add(this.registerReadersGridId);
-            this.registerReadersGridName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registerReadersGridName.Name = "registerReadersGridName";
-            this.registerReadersGridName.HeaderText = "姓名";
-            this.registerReadersGridName.FillWeight = 70F;
-            this.registerReadersGridName.ReadOnly = true;
-            this.registerReadersGrid.Columns.Add(this.registerReadersGridName);
-            this.registerReadersGridState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registerReadersGridState.Name = "registerReadersGridState";
-            this.registerReadersGridState.HeaderText = "虹膜状态";
-            this.registerReadersGridState.FillWeight = 90F;
-            this.registerReadersGridState.ReadOnly = true;
-            this.registerReadersGrid.Columns.Add(this.registerReadersGridState);
+            this.registerReadersGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.registerReadersGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.registerReadersGrid.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.registerReadersGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.registerReadersGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.registerReadersGrid.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(241, 243, 238);
-            this.registerReadersGrid.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.registerReadersGrid.ColumnHeadersDefaultCellStyle.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.registerReadersGrid.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.registerReadersGrid.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.registerReadersGrid.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(235, 242, 236);
-
-            this.registerReaderCount = new System.Windows.Forms.Label();
-            this.registerReaderCount.Location = new System.Drawing.Point(0, 586);
-            this.registerReaderCount.Size = new System.Drawing.Size(400, 25);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.registerReadersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.registerReadersGrid.ColumnHeadersHeight = 40;
+            this.registerReadersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.registerReadersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.registerReadersGridId,
+            this.registerReadersGridName,
+            this.registerReadersGridState});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.registerReadersGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.registerReadersGrid.EnableHeadersVisualStyles = false;
+            this.registerReadersGrid.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.registerReadersGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(243)))));
+            this.registerReadersGrid.Location = new System.Drawing.Point(12, 183);
+            this.registerReadersGrid.Margin = new System.Windows.Forms.Padding(4);
+            this.registerReadersGrid.MultiSelect = false;
+            this.registerReadersGrid.Name = "registerReadersGrid";
+            this.registerReadersGrid.ReadOnly = true;
+            this.registerReadersGrid.RowHeadersVisible = false;
+            this.registerReadersGrid.RowTemplate.Height = 34;
+            this.registerReadersGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.registerReadersGrid.Size = new System.Drawing.Size(510, 502);
+            this.registerReadersGrid.TabIndex = 5;
+            // 
+            // registerReadersGridId
+            // 
+            this.registerReadersGridId.FillWeight = 90F;
+            this.registerReadersGridId.HeaderText = "读者编号";
+            this.registerReadersGridId.Name = "registerReadersGridId";
+            this.registerReadersGridId.ReadOnly = true;
+            // 
+            // registerReadersGridName
+            // 
+            this.registerReadersGridName.FillWeight = 70F;
+            this.registerReadersGridName.HeaderText = "姓名";
+            this.registerReadersGridName.Name = "registerReadersGridName";
+            this.registerReadersGridName.ReadOnly = true;
+            // 
+            // registerReadersGridState
+            // 
+            this.registerReadersGridState.FillWeight = 90F;
+            this.registerReadersGridState.HeaderText = "虹膜状态";
+            this.registerReadersGridState.Name = "registerReadersGridState";
+            this.registerReadersGridState.ReadOnly = true;
+            // 
+            // registerReaderCount
+            // 
+            this.registerReaderCount.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.registerReaderCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(128)))), ((int)(((byte)(122)))));
+            this.registerReaderCount.Location = new System.Drawing.Point(0, 732);
+            this.registerReaderCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.registerReaderCount.Name = "registerReaderCount";
+            this.registerReaderCount.Size = new System.Drawing.Size(500, 31);
             this.registerReaderCount.TabIndex = 7;
             this.registerReaderCount.Text = "0 条记录";
-            this.registerReaderCount.ForeColor = System.Drawing.Color.FromArgb(120, 128, 122);
-            this.registerReaderCount.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular);
-            this.Controls.Add(this.registerReaderCount);
-            this.registrationPanel = new System.Windows.Forms.Panel();
-            this.registrationPanel.Location = new System.Drawing.Point(432, 58);
-            this.registrationPanel.Size = new System.Drawing.Size(616, 550);
+            // 
+            // registrationPanel
+            // 
+            this.registrationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.registrationPanel.Controls.Add(this.selectedReader);
+            this.registrationPanel.Controls.Add(this.selectedReaderId);
+            this.registrationPanel.Controls.Add(this.cameraPanel);
+            this.registrationPanel.Controls.Add(this.eyeLabel);
+            this.registrationPanel.Controls.Add(this.eyeCombo);
+            this.registrationPanel.Controls.Add(this.registrationState);
+            this.registrationPanel.Controls.Add(this.qualityLabel);
+            this.registrationPanel.Controls.Add(this.connectDeviceButton);
+            this.registrationPanel.Controls.Add(this.startRegistrationButton);
+            this.registrationPanel.Controls.Add(this.recaptureButton);
+            this.registrationPanel.Location = new System.Drawing.Point(540, 72);
+            this.registrationPanel.Margin = new System.Windows.Forms.Padding(4);
             this.registrationPanel.Name = "registrationPanel";
+            this.registrationPanel.Size = new System.Drawing.Size(770, 720);
             this.registrationPanel.TabIndex = 8;
-            this.registrationPanel.BackColor = System.Drawing.Color.FromArgb(247, 248, 245);
-            this.Controls.Add(this.registrationPanel);
-            this.selectedReader = new System.Windows.Forms.Label();
-            this.selectedReader.Location = new System.Drawing.Point(20, 18);
-            this.selectedReader.Size = new System.Drawing.Size(560, 29);
+            // 
+            // selectedReader
+            // 
+            this.selectedReader.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
+            this.selectedReader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.selectedReader.Location = new System.Drawing.Point(25, 22);
+            this.selectedReader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.selectedReader.Name = "selectedReader";
+            this.selectedReader.Size = new System.Drawing.Size(700, 36);
             this.selectedReader.TabIndex = 0;
             this.selectedReader.Text = "当前读者：未选择";
-            this.selectedReader.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.selectedReader.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
-            this.registrationPanel.Controls.Add(this.selectedReader);
-            this.selectedReaderId = new System.Windows.Forms.Label();
-            this.selectedReaderId.Location = new System.Drawing.Point(20, 58);
-            this.selectedReaderId.Size = new System.Drawing.Size(560, 25);
+            // 
+            // selectedReaderId
+            // 
+            this.selectedReaderId.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.selectedReaderId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(128)))), ((int)(((byte)(122)))));
+            this.selectedReaderId.Location = new System.Drawing.Point(25, 72);
+            this.selectedReaderId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.selectedReaderId.Name = "selectedReaderId";
+            this.selectedReaderId.Size = new System.Drawing.Size(700, 31);
             this.selectedReaderId.TabIndex = 1;
             this.selectedReaderId.Text = "读者编号：—";
-            this.selectedReaderId.ForeColor = System.Drawing.Color.FromArgb(120, 128, 122);
-            this.selectedReaderId.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular);
-            this.registrationPanel.Controls.Add(this.selectedReaderId);
-            this.cameraPanel = new System.Windows.Forms.Panel();
-            this.cameraPanel.Location = new System.Drawing.Point(20, 110);
-            this.cameraPanel.Size = new System.Drawing.Size(326, 273);
-            this.cameraPanel.Name = "cameraPanel";
-            this.cameraPanel.TabIndex = 2;
-            this.cameraPanel.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.registrationPanel.Controls.Add(this.cameraPanel);
-            this.irisCameraGuide = new System.Windows.Forms.PictureBox();
-            this.irisCameraGuide.Location = new System.Drawing.Point(65, 30);
-            this.irisCameraGuide.Size = new System.Drawing.Size(196, 140);
-            this.irisCameraGuide.Name = "irisCameraGuide";
-            this.irisCameraGuide.TabIndex = 0;
-            this.irisCameraGuide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.irisCameraGuide.Image = ((System.Drawing.Image)(resources.GetObject("irisCameraGuide.Image")));
-            this.irisCameraGuide.TabStop = false;
+            // 
+            // cameraPanel
+            // 
+            this.cameraPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cameraPanel.Controls.Add(this.irisCameraGuide);
-
-            this.eyeLabel = new System.Windows.Forms.Label();
-            this.eyeLabel.Location = new System.Drawing.Point(373, 118);
-            this.eyeLabel.Size = new System.Drawing.Size(210, 25);
-            this.eyeLabel.Name = "eyeLabel";
-            this.eyeLabel.TabIndex = 3;
-            this.eyeLabel.Text = "采集眼别";
-            this.eyeLabel.ForeColor = System.Drawing.Color.FromArgb(120, 128, 122);
-            this.eyeLabel.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular);
-            this.registrationPanel.Controls.Add(this.eyeLabel);
-            this.eyeCombo = new System.Windows.Forms.ComboBox();
-            this.eyeCombo.Location = new System.Drawing.Point(373, 156);
-            this.eyeCombo.Size = new System.Drawing.Size(220, 33);
-            this.eyeCombo.Name = "eyeCombo";
-            this.eyeCombo.TabIndex = 4;
-            this.eyeCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.eyeCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registrationPanel.Controls.Add(this.eyeCombo);
-            this.eyeCombo.Items.AddRange(new object[] { "双眼", "左眼", "右眼" });
-            this.eyeCombo.SelectedIndex = 0;
-            this.registrationState = new System.Windows.Forms.Label();
-            this.registrationState.Location = new System.Drawing.Point(373, 223);
-            this.registrationState.Size = new System.Drawing.Size(220, 28);
-            this.registrationState.Name = "registrationState";
-            this.registrationState.TabIndex = 5;
-            this.registrationState.Text = "注册状态：未注册";
-            this.registrationState.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.registrationState.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular);
-            this.registrationPanel.Controls.Add(this.registrationState);
-            this.qualityLabel = new System.Windows.Forms.Label();
-            this.qualityLabel.Location = new System.Drawing.Point(373, 274);
-            this.qualityLabel.Size = new System.Drawing.Size(220, 28);
-            this.qualityLabel.Name = "qualityLabel";
-            this.qualityLabel.TabIndex = 6;
-            this.qualityLabel.Text = "采集质量：—";
-            this.qualityLabel.ForeColor = System.Drawing.Color.FromArgb(120, 128, 122);
-            this.qualityLabel.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular);
-            this.registrationPanel.Controls.Add(this.qualityLabel);
-            this.registerDeviceState = new System.Windows.Forms.Label();
-            this.registerDeviceState.Location = new System.Drawing.Point(20, 410);
-            this.registerDeviceState.Size = new System.Drawing.Size(560, 25);
+            this.cameraPanel.Controls.Add(this.registerDeviceState);
+            this.cameraPanel.Location = new System.Drawing.Point(25, 107);
+            this.cameraPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.cameraPanel.Name = "cameraPanel";
+            this.cameraPanel.Size = new System.Drawing.Size(687, 372);
+            this.cameraPanel.TabIndex = 2;
+            // 
+            // irisCameraGuide
+            // 
+            this.irisCameraGuide.Image = ((System.Drawing.Image)(resources.GetObject("irisCameraGuide.Image")));
+            this.irisCameraGuide.Location = new System.Drawing.Point(5, 4);
+            this.irisCameraGuide.Margin = new System.Windows.Forms.Padding(4);
+            this.irisCameraGuide.Name = "irisCameraGuide";
+            this.irisCameraGuide.Size = new System.Drawing.Size(678, 305);
+            this.irisCameraGuide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.irisCameraGuide.TabIndex = 0;
+            this.irisCameraGuide.TabStop = false;
+            // 
+            // registerDeviceState
+            // 
+            this.registerDeviceState.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.registerDeviceState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(134)))), ((int)(((byte)(76)))));
+            this.registerDeviceState.Location = new System.Drawing.Point(264, 341);
+            this.registerDeviceState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.registerDeviceState.Name = "registerDeviceState";
+            this.registerDeviceState.Size = new System.Drawing.Size(111, 31);
             this.registerDeviceState.TabIndex = 7;
             this.registerDeviceState.Text = "设备未连接";
-            this.registerDeviceState.ForeColor = System.Drawing.Color.FromArgb(163, 134, 76);
-            this.registerDeviceState.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular);
-            this.registrationPanel.Controls.Add(this.registerDeviceState);
-            this.connectDeviceButton = new System.Windows.Forms.Button();
-            this.connectDeviceButton.Location = new System.Drawing.Point(20, 467);
-            this.connectDeviceButton.Size = new System.Drawing.Size(160, 42);
+            this.registerDeviceState.Visible = false;
+            // 
+            // eyeLabel
+            // 
+            this.eyeLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.eyeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(128)))), ((int)(((byte)(122)))));
+            this.eyeLabel.Location = new System.Drawing.Point(39, 523);
+            this.eyeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.eyeLabel.Name = "eyeLabel";
+            this.eyeLabel.Size = new System.Drawing.Size(262, 31);
+            this.eyeLabel.TabIndex = 3;
+            this.eyeLabel.Text = "采集眼别";
+            // 
+            // eyeCombo
+            // 
+            this.eyeCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.eyeCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eyeCombo.Items.AddRange(new object[] {
+            "双眼",
+            "左眼",
+            "右眼"});
+            this.eyeCombo.Location = new System.Drawing.Point(43, 567);
+            this.eyeCombo.Margin = new System.Windows.Forms.Padding(4);
+            this.eyeCombo.Name = "eyeCombo";
+            this.eyeCombo.Size = new System.Drawing.Size(274, 28);
+            this.eyeCombo.TabIndex = 4;
+            // 
+            // registrationState
+            // 
+            this.registrationState.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.registrationState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.registrationState.Location = new System.Drawing.Point(437, 519);
+            this.registrationState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.registrationState.Name = "registrationState";
+            this.registrationState.Size = new System.Drawing.Size(275, 35);
+            this.registrationState.TabIndex = 5;
+            this.registrationState.Text = "注册状态：未注册";
+            // 
+            // qualityLabel
+            // 
+            this.qualityLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.qualityLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(128)))), ((int)(((byte)(122)))));
+            this.qualityLabel.Location = new System.Drawing.Point(437, 567);
+            this.qualityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.qualityLabel.Name = "qualityLabel";
+            this.qualityLabel.Size = new System.Drawing.Size(275, 35);
+            this.qualityLabel.TabIndex = 6;
+            this.qualityLabel.Text = "采集质量：—";
+            // 
+            // connectDeviceButton
+            // 
+            this.connectDeviceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.connectDeviceButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.connectDeviceButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(218)))));
+            this.connectDeviceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.connectDeviceButton.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.connectDeviceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.connectDeviceButton.Location = new System.Drawing.Point(30, 639);
+            this.connectDeviceButton.Margin = new System.Windows.Forms.Padding(4);
             this.connectDeviceButton.Name = "connectDeviceButton";
+            this.connectDeviceButton.Size = new System.Drawing.Size(200, 52);
             this.connectDeviceButton.TabIndex = 8;
             this.connectDeviceButton.Text = "连接设备";
-            this.connectDeviceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.connectDeviceButton.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.connectDeviceButton.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.connectDeviceButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.connectDeviceButton.UseVisualStyleBackColor = false;
-            this.connectDeviceButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.registrationPanel.Controls.Add(this.connectDeviceButton);
-            this.connectDeviceButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(220, 225, 218);
-            this.connectDeviceButton.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.connectDeviceButton.FlatAppearance.BorderSize = 1;
-            this.startRegistrationButton = new System.Windows.Forms.Button();
-            this.startRegistrationButton.Location = new System.Drawing.Point(197, 467);
-            this.startRegistrationButton.Size = new System.Drawing.Size(180, 42);
+            // 
+            // startRegistrationButton
+            // 
+            this.startRegistrationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(100)))), ((int)(((byte)(82)))));
+            this.startRegistrationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.startRegistrationButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(100)))), ((int)(((byte)(82)))));
+            this.startRegistrationButton.FlatAppearance.BorderSize = 0;
+            this.startRegistrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startRegistrationButton.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.startRegistrationButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.startRegistrationButton.Location = new System.Drawing.Point(248, 639);
+            this.startRegistrationButton.Margin = new System.Windows.Forms.Padding(4);
             this.startRegistrationButton.Name = "startRegistrationButton";
+            this.startRegistrationButton.Size = new System.Drawing.Size(225, 52);
             this.startRegistrationButton.TabIndex = 9;
             this.startRegistrationButton.Text = "采集并注册";
-            this.startRegistrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startRegistrationButton.BackColor = System.Drawing.Color.FromArgb(53, 100, 82);
-            this.startRegistrationButton.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.startRegistrationButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.startRegistrationButton.UseVisualStyleBackColor = false;
-            this.startRegistrationButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.registrationPanel.Controls.Add(this.startRegistrationButton);
-            this.startRegistrationButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(53, 100, 82);
-            this.startRegistrationButton.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.startRegistrationButton.FlatAppearance.BorderSize = 0;
-            this.recaptureButton = new System.Windows.Forms.Button();
-            this.recaptureButton.Location = new System.Drawing.Point(394, 467);
-            this.recaptureButton.Size = new System.Drawing.Size(199, 42);
+            this.startRegistrationButton.Click += new System.EventHandler(this.startRegistrationButton_Click);
+            // 
+            // recaptureButton
+            // 
+            this.recaptureButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.recaptureButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.recaptureButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(218)))));
+            this.recaptureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.recaptureButton.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.recaptureButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.recaptureButton.Location = new System.Drawing.Point(491, 639);
+            this.recaptureButton.Margin = new System.Windows.Forms.Padding(4);
             this.recaptureButton.Name = "recaptureButton";
+            this.recaptureButton.Size = new System.Drawing.Size(249, 52);
             this.recaptureButton.TabIndex = 10;
             this.recaptureButton.Text = "重新采集";
-            this.recaptureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.recaptureButton.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.recaptureButton.ForeColor = System.Drawing.Color.FromArgb(43, 52, 48);
-            this.recaptureButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.recaptureButton.UseVisualStyleBackColor = false;
-            this.recaptureButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.registrationPanel.Controls.Add(this.recaptureButton);
-            this.recaptureButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(220, 225, 218);
-            this.recaptureButton.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.recaptureButton.FlatAppearance.BorderSize = 1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            // 
+            // IrisRegistrationView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            this.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.pageTitle);
+            this.Controls.Add(this.findReaderCaption);
+            this.Controls.Add(this.findReaderTextBox);
+            this.Controls.Add(this.findReaderButton);
+            this.Controls.Add(this.registerReadersGrid);
+            this.Controls.Add(this.registerReaderCount);
+            this.Controls.Add(this.registrationPanel);
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "IrisRegistrationView";
-            this.Size = new System.Drawing.Size(1050, 646);
+            this.Size = new System.Drawing.Size(1312, 808);
+            ((System.ComponentModel.ISupportInitialize)(this.registerReadersGrid)).EndInit();
+            this.registrationPanel.ResumeLayout(false);
+            this.cameraPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.irisCameraGuide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
 

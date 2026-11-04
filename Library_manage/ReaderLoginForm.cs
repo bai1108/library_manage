@@ -35,6 +35,8 @@ namespace Library_manage
 
         private void AdminEntryButton_Click(object sender, EventArgs e)
         {
+            CloseLoginDevice();
+            IrisService.EndSession();
             AdminLoginForm form = new AdminLoginForm();
             this.Hide();
             form.ShowDialog();
@@ -44,7 +46,7 @@ namespace Library_manage
 
         private void startRecognitionButton_Click(object sender, EventArgs e)
         {
-            NoDevice();
+            StartIris();
         }
 
         private void connectDeviceButton_Click(object sender, EventArgs e)
@@ -55,9 +57,9 @@ namespace Library_manage
         {
             if (ScreenData.IsDesignMode(this)) return;
             startRecognitionButton.Text="开始虹膜识别";
-            connectDeviceButton.Click+=delegate {NoDevice();};
-            retryRecognitionButton.Click+=delegate {NoDevice();};
+            connectDeviceButton.Click+=delegate {ScreenData.Run(ToggleIrisConnection);};
+            retryRecognitionButton.Click+=delegate {StartIris();};
+            FormClosed+=delegate {CloseLoginDevice();IrisService.EndSession();};
         }
-        private void NoDevice() {MessageBox.Show("尚未接入虹膜设备 SDK，不能采集或验证身份。\n可由管理员核对读者后，在读者管理中选择“核验后借还”。","虹膜设备");}
     }
 }

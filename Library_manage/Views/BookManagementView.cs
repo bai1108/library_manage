@@ -55,17 +55,17 @@ namespace Library_manage.Views
         }
         private void RefreshBooks()
         {
-            Database.RequireAdmin();DataTable d=Database.Query("SELECT * FROM dbo.Book WHERE BookName LIKE @n AND ISNULL(Author,N'') LIKE @a AND ISNULL(ISBN,N'') LIKE @i ORDER BY BookID DESC",Database.P("@n","%"+bookTitleFilter.Text.Trim()+"%"),Database.P("@a","%"+authorFilter.Text.Trim()+"%"),Database.P("@i","%"+isbnFilter.Text.Trim()+"%"));
+            Database.RequireAdmin();saveBookButton.Enabled=false;saveCopyButton.Enabled=false;DataTable d=Database.Query("SELECT * FROM dbo.Book WHERE BookName LIKE @n AND ISNULL(Author,N'') LIKE @a AND ISNULL(ISBN,N'') LIKE @i ORDER BY BookID DESC",Database.P("@n","%"+bookTitleFilter.Text.Trim()+"%"),Database.P("@a","%"+authorFilter.Text.Trim()+"%"),Database.P("@i","%"+isbnFilter.Text.Trim()+"%"));
             ScreenData.Bind(booksGrid,d,"ISBN","BookName","Author","Category");FillBook();
         }
         private void FillBook()
         {
             DataRow r=ScreenData.Row(booksGrid);
-            if(r==null){copiesGrid.DataSource=null;return;}
+            if(r==null){isbnTextBox.Clear();bookTitleTextBox.Clear();authorTextBox.Clear();publisherTextBox.Clear();categoryTextBox.Clear();yearTextBox.Clear();copiesGrid.DataSource=null;FillCopy();return;}
             isbnTextBox.Text=r["ISBN"].ToString();bookTitleTextBox.Text=r["BookName"].ToString();authorTextBox.Text=r["Author"].ToString();publisherTextBox.Text=r["Publisher"].ToString();categoryTextBox.Text=r["Category"].ToString();yearTextBox.Text=r["PublishYear"].ToString();
             ScreenData.Bind(copiesGrid,Database.Query("SELECT * FROM dbo.BookCopy WHERE BookID=@id ORDER BY CopyID",Database.P("@id",r["BookID"])),"Barcode","Location","Status","EntryDate");
         }
-        private void FillCopy() {DataRow r=ScreenData.Row(copiesGrid);if(r==null)return;copyBarcodeTextBox.Text=r["Barcode"].ToString();copyLocationTextBox.Text=r["Location"].ToString();copyStateCombo.SelectedIndex=-1;if(copyStateCombo.Items.Contains(r["Status"].ToString()))copyStateCombo.Text=r["Status"].ToString();}
+        private void FillCopy() {DataRow r=ScreenData.Row(copiesGrid);if(r==null){copyBarcodeTextBox.Clear();copyLocationTextBox.Clear();copyStateCombo.SelectedIndex=-1;return;}copyBarcodeTextBox.Text=r["Barcode"].ToString();copyLocationTextBox.Text=r["Location"].ToString();copyStateCombo.SelectedIndex=-1;if(copyStateCombo.Items.Contains(r["Status"].ToString()))copyStateCombo.Text=r["Status"].ToString();}
         private void BeginBook(bool create)
         {
             ScreenData.Run(delegate {editBook=create?0:Convert.ToInt32(ScreenData.Need(booksGrid)["BookID"]);if(create){isbnTextBox.Clear();bookTitleTextBox.Clear();authorTextBox.Clear();publisherTextBox.Clear();categoryTextBox.Clear();yearTextBox.Clear();}else FillBook();bookEditorTabs.SelectedTab=bibliographyTab;saveBookButton.Enabled=true;});
@@ -76,12 +76,15 @@ namespace Library_manage.Views
         }
         private void SaveBook()
         {
+            if(!saveBookButton.Enabled)throw new Exception("请先点击新增或修改书目。");
             int year;object y=null;if(yearTextBox.Text.Trim()!=""){if(!int.TryParse(yearTextBox.Text,out year)||year<1000||year>9999)throw new Exception("出版年份须为四位数字。");y=year;}
-            Database.Write("书目维护","Book",editBook,editBook==0?"INSERT dbo.Book(ISBN,BookName,Author,Publisher,Category,PublishYear) VALUES(@i,@n,@a,@p,@c,@y)":"UPDATE dbo.Book SET ISBN=@i,BookName=@n,Author=@a,Publisher=@p,Category=@c,PublishYear=@y WHERE BookID=@id",Database.P("@id",editBook),Database.P("@i",string.IsNullOrWhiteSpace(isbnTextBox.Text)?null:isbnTextBox.Text.Trim()),Database.P("@n",ScreenData.Required(bookTitleTextBox,"书名")),Database.P("@a",authorTextBox.Text.Trim()),Database.P("@p",publisherTextBox.Text.Trim()),Database.P("@c",categoryTextBox.Text.Trim()),Database.P("@y",y));saveBookButton.Enabled=false;RefreshBooks();
+            Database.Write("书目维护","Book",editBook,editBook==0?"INSERT dbo.Book(ISBN,BookName,Author,Publisher,Category,PublishYear) VALUES(@i,@n,@a,@p,@c,@y)":"UPDATE dbo.Book SET ISBN=@i,BookName=@n,Author=@a,Publisher=@p,Category=@c,PublishYear=@y WHERE BookID=@id",Database.P("@id",editBook),Database.P("@i",string.IsNullOrWhiteSpace(isbnTextBox.Text)?null:isbnTextBox.Text.Trim()),Database.P("@n",ScreenData.Required(bookTitleTextBox,"书名")),Database.P("@a",authorTextBox.Text.Trim()),Database.P("@p",publisherTextBox.Text.Trim()),Database.P("@c",categoryTextBox.Text.Trim()),Database.P("@y",y));saveBookButton.Enabled=false;try{RefreshBooks();}catch(Exception ex){MessageBox.Show("书目已保存，但列表刷新失败，请重新查询。\n"+ex.Message,"保存结果");}
         }
         private void SaveCopy()
         {
-            Database.Write("复本维护","BookCopy",editCopy,editCopy==0?"INSERT dbo.BookCopy(BookID,Barcode,Location,Status) VALUES(@book,@b,@l,@s)":"UPDATE dbo.BookCopy SET Barcode=@b,Location=@l,Status=@s WHERE CopyID=@id AND Status IN(N'可借',N'停用')",Database.P("@id",editCopy),Database.P("@book",copyBook),Database.P("@b",ScreenData.Required(copyBarcodeTextBox,"复本条码")),Database.P("@l",copyLocationTextBox.Text.Trim()),Database.P("@s",copyStateCombo.Text));saveCopyButton.Enabled=false;FillBook();
+            if(!saveCopyButton.Enabled)throw new Exception("请先点击新增或修改复本。");
+            if(copyStateCombo.Text!="可借" && copyStateCombo.Text!="停用")throw new Exception("请选择有效的复本状态。");
+            Database.Write("复本维护","BookCopy",editCopy,editCopy==0?"INSERT dbo.BookCopy(BookID,Barcode,Location,Status) VALUES(@book,@b,@l,@s)":"UPDATE dbo.BookCopy SET Barcode=@b,Location=@l,Status=@s WHERE CopyID=@id AND Status IN(N'可借',N'停用')",Database.P("@id",editCopy),Database.P("@book",copyBook),Database.P("@b",ScreenData.Required(copyBarcodeTextBox,"复本条码")),Database.P("@l",copyLocationTextBox.Text.Trim()),Database.P("@s",copyStateCombo.Text));saveCopyButton.Enabled=false;try{FillBook();}catch(Exception ex){MessageBox.Show("复本已保存，但列表刷新失败，请重新查询。\n"+ex.Message,"保存结果");}
         }
     }
 }

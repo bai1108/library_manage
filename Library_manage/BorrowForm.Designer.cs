@@ -45,6 +45,8 @@
             this.borrowButton = new System.Windows.Forms.Button();
             this.returnButton = new System.Windows.Forms.Button();
             this.renewButton = new System.Windows.Forms.Button();
+            this.reportLostButton = new System.Windows.Forms.Button();
+            this.resolveLostButton = new System.Windows.Forms.Button();
             this.borrowDivider = new System.Windows.Forms.Panel();
             this.loanListTitle = new System.Windows.Forms.Label();
             this.loanGrid = new System.Windows.Forms.DataGridView();
@@ -325,6 +327,8 @@
             this.borrowWorkspace.Controls.Add(this.borrowButton);
             this.borrowWorkspace.Controls.Add(this.returnButton);
             this.borrowWorkspace.Controls.Add(this.renewButton);
+            this.borrowWorkspace.Controls.Add(this.reportLostButton);
+            this.borrowWorkspace.Controls.Add(this.resolveLostButton);
             this.borrowWorkspace.Controls.Add(this.borrowDivider);
             this.borrowWorkspace.Controls.Add(this.loanListTitle);
             this.borrowWorkspace.Controls.Add(this.loanGrid);
@@ -433,6 +437,34 @@
             this.renewButton.Text = "续借";
             this.renewButton.UseVisualStyleBackColor = false;
             // 
+            // reportLostButton
+            this.reportLostButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.reportLostButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reportLostButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(218)))));
+            this.reportLostButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reportLostButton.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.reportLostButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.reportLostButton.Location = new System.Drawing.Point(543, 219);
+            this.reportLostButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportLostButton.Name = "reportLostButton";
+            this.reportLostButton.Size = new System.Drawing.Size(150, 50);
+            this.reportLostButton.TabIndex = 8;
+            this.reportLostButton.Text = "登记遗失";
+            this.reportLostButton.UseVisualStyleBackColor = false;
+            // resolveLostButton
+            this.resolveLostButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.resolveLostButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resolveLostButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(218)))));
+            this.resolveLostButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resolveLostButton.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.resolveLostButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(48)))));
+            this.resolveLostButton.Location = new System.Drawing.Point(711, 219);
+            this.resolveLostButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.resolveLostButton.Name = "resolveLostButton";
+            this.resolveLostButton.Size = new System.Drawing.Size(150, 50);
+            this.resolveLostButton.TabIndex = 8;
+            this.resolveLostButton.Text = "遗失处理";
+            this.resolveLostButton.UseVisualStyleBackColor = false;
             // borrowDivider
             // 
             this.borrowDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(228)))), ((int)(((byte)(222)))));
@@ -616,6 +648,8 @@
         private System.Windows.Forms.Button borrowButton;
         private System.Windows.Forms.Button returnButton;
         private System.Windows.Forms.Button renewButton;
+        private System.Windows.Forms.Button reportLostButton;
+        private System.Windows.Forms.Button resolveLostButton;
         private System.Windows.Forms.Panel borrowDivider;
         private System.Windows.Forms.Label loanListTitle;
         private System.Windows.Forms.DataGridView loanGrid;
